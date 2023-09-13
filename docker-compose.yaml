@@ -1,0 +1,60 @@
+version: "3.9"
+services:
+  backend:
+    depends_on:
+      - postgres_db
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: backend:v1
+    env_file:
+      - ./backend/.env
+    environment:
+      - PORT=8000
+    ports:
+      - "8000:8000"
+    command: sh -c "chmod +x /app/migrate.sh && sh /app/migrate.sh && /app/entrypoint.sh"
+  frontend:
+    depends_on:
+      - backend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: frontend:v1
+    env_file:
+      - ./frontend/.env
+    environment:
+      - PORT=4200
+    volumes:
+      - ".:/app"
+
+    ports:
+      - "4200:4200"
+
+  postgres_db:
+    restart: always
+    command: -p 5433
+    image: postgres
+    env_file:
+      - ./backend/.env
+    expose:
+      - 5433
+    ports:
+      - "5433:5433"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis_db:
+    image: redis
+    restart: always
+    expose:
+      - 6380
+    ports:
+      - "6380:6380"
+    volumes:
+      - redis_data:/data
+    entrypoint: redis-server --appendonly yes --port 6380
+
+volumes:
+  postgres_data:
+  redis_data:

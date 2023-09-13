@@ -2,6 +2,8 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+import dotenv
+import pathlib
 
 
 def main():
@@ -18,5 +20,11 @@ def main():
     execute_from_command_line(sys.argv)
 
 
+CURRENT_DIR = pathlib.Path(__file__).resolve().parent
+
+ENV_FILE_PATH = CURRENT_DIR / ".env"
+
+
 if __name__ == '__main__':
+    dotenv.read_dotenv(ENV_FILE_PATH)
     main()
