@@ -101,17 +101,17 @@ DB_IS_AVAILABLE = all([
 ])
 
 
-if DB_IS_AVAILABLE:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': DB_DATABASE,
-            "USER": DB_USERNAME,
-            "PASSWORD": DB_PASSWD,
-            "HOST": DB_HOST,
-            "PORT": DB_PORT,
-        }
-    }
+# if DB_IS_AVAILABLE:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql',
+#             'NAME': DB_DATABASE,
+#             "USER": DB_USERNAME,
+#             "PASSWORD": DB_PASSWD,
+#             "HOST": DB_HOST,
+#             "PORT": DB_PORT,
+#         }
+#     }
 
 
 # Password validation

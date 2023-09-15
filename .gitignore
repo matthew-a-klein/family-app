@@ -11,6 +11,8 @@
 # Local History for Visual Studio Code
 .history/
 
+pyclient.py
+
 # Built Visual Studio Code Extensions
 *.vsix
 
