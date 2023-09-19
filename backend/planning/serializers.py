@@ -25,20 +25,48 @@ class CleaningListItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = CleaningListItem
         fields = ['name', 'completed', 'id', 'frequency']
-
-    def clear_daily_items():
+        
+    @classmethod
+    def clear_daily_tasks(cls):
         CleaningListItem.objects.filter(frequency="D").delete()
-
-    def clear_weekly_items():
+    @classmethod
+    def clear_weekly_tasks(cls):
         print("deleting weekly items")
         CleaningListItem.objects.filter(frequency="W").delete()
-
-    def clear_monthly_items():
+    @classmethod
+    def clear_monthly_tasks(cls):
         CleaningListItem.objects.filter(frequency="M").delete()
-        
-    def add_tasks():
-        with open('planning/cleaning_tasks.json',mode="r") as json_file:
+    @classmethod   
+    def add_daily_tasks(cls):
+        with open('planning/cleaning_tasks/daily_cleaning_tasks.json',mode="r") as json_file:
             tasks = json.load(json_file)
             for task in tasks:
                 CleaningListItem.objects.create(**task)
+    @classmethod           
+    def add_weekly_tasks(cls):
+        with open('planning/cleaning_tasks/weekly_cleaning_tasks.json',mode="r") as json_file:
+            tasks = json.load(json_file)
+            for task in tasks:
+                CleaningListItem.objects.create(**task)
+    @classmethod
+    def add_monthly_tasks(cls):
+        with open('planning/cleaning_tasks/monthly_cleaning_tasks.json',mode="r") as json_file:
+            tasks = json.load(json_file)
+            for task in tasks:
+                CleaningListItem.objects.create(**task)
+    @classmethod            
+    def refresh_daily_tasks(cls):
+        cls.clear_daily_tasks()
+        cls.add_daily_tasks()
+        
+    @classmethod            
+    def refresh_weekly_tasks(cls):
+        cls.clear_weekly_tasks()
+        cls.add_weekly_tasks()
+    @classmethod            
+    def refresh_monthly_tasks(cls):
+        cls.clear_monthly_tasks()
+        cls.add_monthly_tasks()
+   
+        
         

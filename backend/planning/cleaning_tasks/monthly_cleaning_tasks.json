@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Clean windows",
+    "frequency": "M"
+  },
+  {
+    "name": "Clean fridge",
+    "frequency": "M"
+  },
+  {
+    "name": "Clean oven",
+    "frequency": "M"
+  },
+  {
+    "name": "Wash Bin",
+    "frequency": "M"
+  },
+  {
+    "name": "Wipe cupboard doors",
+    "frequency": "M"
+  },
+  {
+    "name": "Clean showerhead",
+    "frequency": "M"
+  },
+  {
+    "name": "Wash windows",
+    "frequency": "M"
+  },
+  {
+    "name": "Wash Bathroom Rugs",
+    "frequency": "M"
+  },
+  {
+    "name": "Change sheets",
+    "frequency": "M"
+  },
+  {
+    "name": "Wash bedroom windows",
+    "frequency": "M"
+  },
+  {
+    "name": "Organise bedroom drawers",
+    "frequency": "M"
+  },
+  {
+    "name": "Dust book shelves",
+    "frequency": "M"
+  }
+]

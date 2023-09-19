@@ -27,20 +27,30 @@ class CleaningListViewset(viewsets.ModelViewSet):
 
     @action(detail=False, methods=['POST'])
     def delete_daily(self, request):
-        CleaningListItemSerializer.clear_daily_items()
+        CleaningListItemSerializer.clear_daily_tasks()
         return Response(status=status.HTTP_200_OK)
 
     @action(detail=False, methods=['POST'])
     def delete_weekly(self, request):
-        CleaningListItemSerializer.clear_weekly_items()
+        CleaningListItemSerializer.clear_weekly_tasks()
         return Response(status=status.HTTP_200_OK)
 
     @action(detail=False, methods=['POST'])
     def delete_monthly(self, request):
-        CleaningListItemSerializer.clear_monthly_items()
+        CleaningListItemSerializer.clear_monthly_tasks()
         return Response(status=status.HTTP_200_OK)
     @action(detail=False, methods=['POST'])
-    def add_tasks(self, request):
-        CleaningListItemSerializer.add_tasks()
+    def refresh_daily_tasks(self, request):
+        CleaningListItemSerializer.refresh_daily_tasks()
+        return Response(status=status.HTTP_200_OK)
+    
+    @action(detail=False, methods=['POST'])
+    def refresh_weekly_tasks(self, request):
+        CleaningListItemSerializer.refresh_weekly_tasks()
+        return Response(status=status.HTTP_200_OK)
+    
+    @action(detail=False, methods=['POST'])
+    def refresh_monthly_tasks(self, request):
+        CleaningListItemSerializer.refresh_monthly_tasks()
         return Response(status=status.HTTP_200_OK)
         

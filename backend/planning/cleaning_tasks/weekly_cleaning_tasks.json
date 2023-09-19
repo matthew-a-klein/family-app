@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Wipe countertops and stove",
+    "frequency": "W"
+  },
+  {
+    "name": "Wipe sink",
+    "frequency": "W"
+  },
+  {
+    "name": "Sweep",
+    "frequency": "W"
+  },
+  {
+    "name": "Take out Rubbish",
+    "frequency": "W"
+  },
+  {
+    "name": "Wipe spills in fridge",
+    "frequency": "W"
+  },
+  {
+    "name": "Throw out old food",
+    "frequency": "W"
+  },
+
+  {
+    "name": "Mop bathroom",
+    "frequency": "W"
+  },
+  {
+    "name": "Clean sink, mirror, shake bathroom rugs",
+    "frequency": "W"
+  },
+  {
+    "name": "Straighten bedside table",
+    "frequency": "W"
+  },
+  {
+    "name": "Sweep bedroom",
+    "frequency": "W"
+  },
+  {
+    "name": "Sweep entry",
+    "frequency": "W"
+  },
+  {
+    "name": "Organise entrance area",
+    "frequency": "W"
+  }
+]
