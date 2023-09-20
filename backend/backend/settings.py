@@ -113,6 +113,16 @@ if DB_IS_AVAILABLE:
         }
     }
 
+#Email Settings
+
+EMAIL_BACKEND=os.environ.get('EMAIL_BACKEND')
+EMAIL_HOST=os.environ.get('EMAIL_HOST')
+EMAIL_HOST_USER=os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD=os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_PORT=int(os.environ.get('EMAIL_PORT'))
+EMAIL_USE_TLS=os.environ.get('EMAIL_USE_TLS') == 'True'
+EMAIL_USE_SSL=os.environ.get('EMAIL_USE_SSL') == 'True'
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
